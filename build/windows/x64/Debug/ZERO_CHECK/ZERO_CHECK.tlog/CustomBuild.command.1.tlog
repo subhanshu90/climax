@@ -1,0 +1,10 @@
+^C:\USERS\SUBHA\FLUTTERBAAZI\WTFNIGGA\DISE\CLIMA\BUILD\WINDOWS\CMAKEFILES\5A17C4B2ADDC32992B741C718FEF8668\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/subha/flutterbaazi/wtfnigga/dise/clima/windows -BC:/Users/subha/flutterbaazi/wtfnigga/dise/clima/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/subha/flutterbaazi/wtfnigga/dise/clima/build/windows/app.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -23,7 +23,7 @@ class avatar extends StatelessWidget {
           ),
         ),
         Text(
-          "Subhanshu",
+          "Subhanshu 👋",
           style: GoogleFonts.poppins(textStyle: text2),
         )
       ],

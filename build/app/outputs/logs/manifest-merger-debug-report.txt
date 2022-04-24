@@ -18,6 +18,7 @@ INJECTED from C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\android\app\src\ma
 INJECTED from C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\android\app\src\main\AndroidManifest.xml:1:1-34:12
 MERGED from C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\android\app\src\main\AndroidManifest.xml:1:1-34:12
 MERGED from [:path_provider_android] C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:dynamic_color] C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\build\dynamic_color\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\subha\.gradle\caches\transforms-3\590523decbc98f5279e30216b7e44fb2\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\subha\.gradle\caches\transforms-3\906e8d7d191fd1dc95456eedfdac304e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\subha\.gradle\caches\transforms-3\9b17b4dc0b186922eb1f1797958f60f5\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -58,6 +59,8 @@ INJECTED from C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\android\app\src\ma
 INJECTED from C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\android\app\src\main\AndroidManifest.xml
 MERGED from [:path_provider_android] C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:dynamic_color] C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\build\dynamic_color\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:dynamic_color] C:\Users\subha\flutterbaazi\wtfnigga\dise\clima\build\dynamic_color\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\subha\.gradle\caches\transforms-3\590523decbc98f5279e30216b7e44fb2\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\subha\.gradle\caches\transforms-3\590523decbc98f5279e30216b7e44fb2\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\subha\.gradle\caches\transforms-3\906e8d7d191fd1dc95456eedfdac304e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41

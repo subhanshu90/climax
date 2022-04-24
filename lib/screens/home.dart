@@ -1,80 +1,53 @@
+import 'package:app/screens/search.dart';
 import 'package:flutter/material.dart';
-import 'package:app/widgets/kard.dart';
-import 'package:app/widgets/avatar.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:app/widgets/widgetkardstuffs.dart';
+import 'package:app/widgets/bodyparts.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
-  late PageController _pageController;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
+  int index = 0;
+  final screens = [
+    body(),
+    Search(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
+        backgroundColor: Theme.of(context).colorScheme.background,
+        body: screens[index],
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: index,
+          onDestinationSelected: (index) {
             setState(() {
-              _currentIndex = index;
+              this.index = index;
             });
           },
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(25),
-                  child: avatar(),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Kard(
-                    image: const AssetImage('images/sunny.jpg'),
-                    child: KardStuff(),
-                  ),
-                ),
-                Expanded(
-                    flex: 3,
-                    child: Kard(
-                        image: AssetImage('images/air.jpg'), child: Column()))
-              ],
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
+              selectedIcon: Icon(Icons.home_filled),
             ),
-          ]),
-      bottomNavigationBar: BottomNavyBar(
-        selectedIndex: _currentIndex,
-        onItemSelected: (index) {
-          setState(() => _currentIndex = index);
-          _pageController.jumpToPage(index);
-        },
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-              title: const Text('Home'), icon: const Icon(Icons.home)),
-          BottomNavyBarItem(
-              title: const Text('Search'), icon: const Icon(Icons.search)),
-          BottomNavyBarItem(
-              title: const Text('Settings'), icon: const Icon(Icons.settings)),
-        ],
-      ),
-    );
+            NavigationDestination(
+              icon: Icon(Icons.search),
+              label: 'Search',
+              selectedIcon: Icon(Icons.search_sharp),
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+              selectedIcon: Icon(Icons.settings),
+            )
+          ],
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+          elevation: 0,
+          animationDuration: Duration(seconds: 1),
+          height: 60,
+        ));
   }
 }
