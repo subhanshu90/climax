@@ -37,6 +37,9 @@ dependencies:
   dynamic_color: ^1.2.0
   flutter_svg: ^1.0.3
   intl: ^0.17.0
+  skeletons: ^0.0.3
+  geolocator: ^8.2.0
+  cat_avatar_generator: ^0.1.0
 
 dev_dependencies:
   flutter_test:

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:app/screens/home.dart';
 import 'package:dynamic_color/dynamic_color.dart';
-import 'package:app/helpers/weatherdata.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ColorScheme? bruh;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(Climax());
+  runApp(const Climax());
 }
 
 const kolor = Color.fromARGB(255, 215, 11, 8);

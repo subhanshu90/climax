@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/constants/textstyles.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:cat_avatar_generator/cat_avatar_generator.dart';
 
 class avatar extends StatelessWidget {
   const avatar({
@@ -11,8 +12,8 @@ class avatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const CircleAvatar(
-          backgroundImage: AssetImage('images/man.png'),
+        CircleAvatar(
+          backgroundImage: MeowatarImage.fromString("subh"),
           radius: 25.0,
         ),
         Padding(

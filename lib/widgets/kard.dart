@@ -1,10 +1,5 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:app/constants/textstyles.dart';
-import 'bodyparts.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:app/helpers/iconresolver.dart';
 
 class kard1 extends StatelessWidget {
   Widget child;
@@ -31,16 +26,15 @@ class kard1 extends StatelessWidget {
 
 class KardInKard extends StatelessWidget {
   final String text;
+  final TextStyle textstyle;
 
-  const KardInKard({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
+  const KardInKard({Key? key, required this.text, required this.textstyle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(27, 0, 0, 0),
+      color: const Color.fromARGB(27, 0, 0, 0),
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
@@ -52,8 +46,8 @@ class KardInKard extends StatelessWidget {
             Text(
               text,
               style: GoogleFonts.poppins(
-                  textStyle: text1.copyWith(
-                      color: Color.fromARGB(255, 233, 223, 223))),
+                  textStyle: textstyle.copyWith(
+                      color: const Color.fromARGB(255, 233, 223, 223))),
             ),
           ],
         ),
@@ -73,7 +67,7 @@ class KardInKard2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(27, 0, 0, 0),
+      color: const Color.fromARGB(27, 0, 0, 0),
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),

@@ -1,9 +1,10 @@
 import 'package:app/screens/search.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/bodyparts.dart';
+import 'settings.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -11,10 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int index = 0;
-  final screens = [
-    body(),
-    Search(),
-  ];
+  final screens = [const body(), const Search(), const Settings()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +44,7 @@ class _HomeState extends State<Home> {
           ],
           labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           elevation: 0,
-          animationDuration: Duration(seconds: 1),
+          animationDuration: const Duration(seconds: 1),
           height: 60,
         ));
   }
