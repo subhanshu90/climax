@@ -1,5 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:tuple/tuple.dart';
+
+import 'hourlyweather.dart';
+
+var data;
+List parsedData = [];
 
 class CurrWeather {
   final String sunrise;
@@ -55,6 +61,21 @@ class CurrWeather {
         rainchance: json["forecast"]["forecastday"][0]["day"]
             ["daily_chance_of_rain"]);
   }
+
+  List<Tuple2> toList() {
+    return [
+      Tuple2('sunrise', sunrise),
+      Tuple2('sunset', sunset),
+      Tuple2('temp', temp.toString()),
+      Tuple2('moonPhase', moonPhase),
+      Tuple2('pressure', pressure.toString()),
+      Tuple2('humidity', humidity.toString()),
+      Tuple2('windspeed', windspeed.toString()),
+      Tuple2('max', max.toString()),
+      Tuple2('min', min.toString()),
+      Tuple2('rainchance', rainchance.toString())
+    ];
+  }
 }
 
 String api = '8c29489d3b174df582c183631222604';
@@ -64,10 +85,24 @@ Future getData(double? latitude, double? longitude) async {
       'http://api.weatherapi.com/v1/forecast.json?key=$api&q=$latitude,$longitude&days=1&aqi=no&alerts=no';
   var resp = await http.get(Uri.parse(url));
   if (resp.statusCode == 200) {
-    var data = jsonDecode(resp.body);
-
-    return CurrWeather.fromJson(data);
+    data = jsonDecode(resp.body);
+    parsedData = data["forecast"]["forecastday"][0]["hour"];
+    return data;
   } else {
     throw Exception('failed to load');
   }
+}
+
+Future getcurrweatherdata(dynamic data) async {
+  return CurrWeather.fromJson(data);
+}
+
+Future gethourlydata() async {
+  for (var item in parsedData) {
+    HourlyWeather kek = HourlyWeather(
+        time: DateTime.fromMillisecondsSinceEpoch(item["time_epoch"] * 1000),
+        temp: item["temp_c"].round());
+    hourlydata.add(kek);
+  }
+  return hourlydata;
 }

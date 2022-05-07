@@ -3,16 +3,24 @@ import 'package:google_fonts/google_fonts.dart';
 
 class kard1 extends StatelessWidget {
   Widget child;
-  kard1({Key? key, required this.child}) : super(key: key);
+  double height;
+  double width;
+  kard1(
+      {Key? key,
+      required this.child,
+      required this.height,
+      required this.width})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: SizedBox(
-        height: 300,
-        width: double.infinity,
+        height: height,
+        width: width,
         child: Card(
+          elevation: 0,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           color: Theme.of(context).colorScheme.secondaryContainer,
           shape:
@@ -57,9 +65,9 @@ class KardInKard extends StatelessWidget {
 }
 
 class KardInKard2 extends StatelessWidget {
-  Widget bachwa;
+  final Widget bachwa;
 
-  KardInKard2({
+  const KardInKard2({
     Key? key,
     required this.bachwa,
   }) : super(key: key);
