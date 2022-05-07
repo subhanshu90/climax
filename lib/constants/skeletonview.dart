@@ -35,13 +35,6 @@ class haddi extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 40),
-        const SkeletonAvatar(
-          style: SkeletonAvatarStyle(
-            width: double.infinity,
-            height: 200,
-          ),
-        ),
       ],
     ));
   }

@@ -40,6 +40,10 @@ dependencies:
   skeletons: ^0.0.3
   geolocator: ^8.2.0
   cat_avatar_generator: ^0.1.0
+  animations: ^2.0.2
+  font_awesome_flutter: ^10.1.0
+  tuple: ^2.0.0
+  syncfusion_flutter_charts: ^20.1.52
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +70,11 @@ flutter:
   assets:
     - images/icons/
     - images/svg/
+    - images/
+  fonts:
+    - family: Noto
+      fonts:
+        - asset: asset/fonts/Noto_Sans/NotoSans-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

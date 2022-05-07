@@ -9,7 +9,7 @@ void main() {
   runApp(const Climax());
 }
 
-const kolor = Color.fromARGB(255, 215, 11, 8);
+const kolor = Color.fromARGB(255, 129, 241, 88);
 
 class Climax extends StatelessWidget {
   const Climax({Key? key}) : super(key: key);
@@ -35,6 +35,7 @@ class Climax extends StatelessWidget {
         }
         return MaterialApp(
           theme: ThemeData(
+            useMaterial3: true,
             colorScheme: lightColorScheme,
             textTheme: GoogleFonts.poppinsTextTheme(),
           ),
@@ -42,7 +43,7 @@ class Climax extends StatelessWidget {
           themeMode: ThemeMode.system,
           initialRoute: '/home',
           routes: {
-            '/home': (context) => SafeArea(child: Home()),
+            '/home': (context) => const SafeArea(child: Home()),
           },
         );
       },
