@@ -28,7 +28,7 @@ class _graphState extends State<graph> {
       Theme.of(context).colorScheme.tertiary
     ]);
     return FutureBuilder(
-        future: gethour(),
+        future: gethourlydata(),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Skeleton(
@@ -61,6 +61,7 @@ class _graphState extends State<graph> {
                 majorGridLines: const MajorGridLines(width: 0),
               ),
               primaryYAxis: NumericAxis(
+                  interval: 5.0,
                   isVisible: true,
                   majorGridLines: const MajorGridLines(width: 0),
                   axisLine: const AxisLine(width: 0),

@@ -80,13 +80,13 @@ class CurrWeather {
 
 String api = '8c29489d3b174df582c183631222604';
 
-Future getData(double? latitude, double? longitude) async {
+Future getData(String query) async {
   var url =
-      'http://api.weatherapi.com/v1/forecast.json?key=$api&q=$latitude,$longitude&days=1&aqi=no&alerts=no';
+      'http://api.weatherapi.com/v1/forecast.json?key=$api&q=$query&days=1&aqi=no&alerts=no';
   var resp = await http.get(Uri.parse(url));
   if (resp.statusCode == 200) {
-    data = jsonDecode(resp.body);
-    parsedData = data["forecast"]["forecastday"][0]["hour"];
+    data = await jsonDecode(resp.body);
+    parsedData = await data["forecast"]["forecastday"][0]["hour"];
     return data;
   } else {
     throw Exception('failed to load');
@@ -98,6 +98,7 @@ Future getcurrweatherdata(dynamic data) async {
 }
 
 Future gethourlydata() async {
+  hourlydata.clear();
   for (var item in parsedData) {
     HourlyWeather kek = HourlyWeather(
         time: DateTime.fromMillisecondsSinceEpoch(item["time_epoch"] * 1000),
