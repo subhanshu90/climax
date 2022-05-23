@@ -23,8 +23,13 @@ class body extends StatefulWidget {
 
 class _bodyState extends State<body> {
   Future fetchData() async {
-    Position lok = await Lokation().determinePosition();
-    await getData(lok.latitude, lok.longitude);
+    if (noloc) {
+      await getData(ip);
+    } else {
+      Position lok = await Lokation().determinePosition();
+      String coord = "${lok.latitude},${lok.longitude}";
+      await getData(coord);
+    }
     return await getcurrweatherdata(data);
   }
 
@@ -71,7 +76,7 @@ class weatherCard extends StatelessWidget {
       closedColor: Theme.of(context).colorScheme.background,
       openColor: Theme.of(context).colorScheme.background,
       closedBuilder: (context, action) => kard1(
-        height: 300,
+        height: 325,
         width: double.infinity,
         child: Stack(clipBehavior: Clip.antiAliasWithSaveLayer, children: [
           SvgPicture.asset(
@@ -154,9 +159,11 @@ class weatherCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                KardInKard(
-                  text: '${snapshot.data!.city}, ${snapshot.data!.region}',
-                  textstyle: text1,
+                Expanded(
+                  child: KardInKard(
+                    text: '${snapshot.data!.city}, ${snapshot.data!.region}',
+                    textstyle: text1,
+                  ),
                 ),
               ],
             ),
